@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
+<!-- JSX script -->
+
+<script type="text/babel">
+
+  class Name extends React.Component {
+    render() {
+      return (
+        <h1>{this.props.user}</h1>
+      );
+    }
+  }
+
+  class Photo extends React.Component {
+    render() {
+      return (
+        <img src="http://placehold.it/200x200"/>
+      );
+    }
+  }
+
+  class Caption extends React.Component {
+    render() {
+      return (
+        <h1>Caption</h1>
+      );
+    }
+  }
+
+  class Post extends React.Component {
+    constructor() {
+      super();
+      this.state = {user : "samuel yang"};
+    }
+    render() {
+      return (
+        <div>
+          <Name user={this.state.user}/>
+          <Photo/>
+          <Caption/>
+        </div>
+      );
+    }
+  }
+
+  ReactDOM.render(
+    <Post/>,
+    document.getElementById('root')
+  );
+
+</script>
